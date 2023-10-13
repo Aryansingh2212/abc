@@ -1,0 +1,33 @@
+Practical 1 - LED Blinking
+anode-->GND
+cathode-->5
+
+Practical 2 - 4 digit 7 segment
+DIO-->24/38
+CLK-->23/40
+GND-->6/9/14/20/25/30/34/39
+VCC-->2/4
+
+Practical 4 - raspberry pi gps module interfacing
++VCC-->2/4
+RX-->8
+TX-->10
+GND-->6
+
+Practical 5 - Home Automation
+GND-->6
+VCC-->2
+IN1-->37
+
+Practical 7, 8, 9 - RFID, 16x2LCD, Oscilloscope
+GND-->6
+VCC-->4
+SDA-->3
+SCL-->5
+
+Practical 10 - Fingerprint
+5.5-->red wire
+GND-->black wire
+RX-->yellow wire
+TX-->green wire
+ 
