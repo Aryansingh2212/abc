@@ -1,0 +1,46 @@
+Procedure:
+Step 1:- Go to terminal and write the following command:
+	sudo raspi-config
+Step 2:- A window will pop up, Go to Interface Options and enable Legacy Camera and then 'Finish' the process.
+               the system will ask for reboot, click 'Yes'.
+Step 3:-  After reboot, click on the Raspberry Pi logo on the home screen, go to Preferences, select Raspberry Pi configurations, go to 'Interfaces' and enable 'I2C'
+
+Step 4:- Write the following code in thonny for capturing image:
+	import picamera
+	from time import sleep
+
+	#Create object for PiCamera class
+	camera = picamera.PiCamera()
+	#set resolution
+	camera.resolution=(1024, 768)
+	camera.brightness= 60
+	camera.start_preview()
+	#add text on image
+	camera.annotate_text = 'Hi Pi User'
+	sleep(5)
+	#store image
+	camera.capture('image1.jpeg')
+	camera.stop_preview()
+Step 5:- Write the following code in thonny for capturing video:
+	import picamera
+	from time import sleep
+
+	#Create object for PiCamera class
+	camera = picamera.PiCamera()
+	#set resolution
+	camera.resolution=(640, 480)
+	
+	print()
+	#start recording using pi camera
+	camera.start_recording('/home/pi/demo.h264')
+	#wait for video to record
+	camera.wait_recording(20)
+	#stop recording
+	camer.stop_recording()
+	print("Video recording stopped.")
+Step 6:- To play the video:
+	Omxplayer demo.h264
+
+Output:
+	photo
+	

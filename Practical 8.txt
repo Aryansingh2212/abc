@@ -1,0 +1,28 @@
+Aim:Study16x2 LCD
+
+Procedure:
+Step 1:-Connect 16x2 LCD(Liquid Crystal Display) to Raspberry Pi-
+	GND--->6
+	VCC--->4
+	SDA--->3
+	SCL--->5
+Step 2:- Start your Raspberry Pi.
+Step 3:-Open thonny and write the following code-
+from signal import signal, SIGTERM, SIGHUP, pause
+from rpi_lcd import LCD
+lcd = LCD()
+def safe_exit(signum, frame):
+	exit(1)
+try:
+	signal(SIGTERM, safe_exit)
+	signal(SIGHUP, safe_exit)
+	lcd.text("Hello,",1)
+	lcd.text("World!!",2)
+	pause()
+except KeyboardInterrupt:
+	pass
+finally:
+	lcd.clear()
+Step 4:-If rpi_lcd module is not installed, then go to terminal and install the package-
+	pip install rpi_lcd
+Step 5:-Run the code.

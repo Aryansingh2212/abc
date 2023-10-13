@@ -1,0 +1,26 @@
+Aim: Raspberry Pi based Oscilloscope
+Procedure:
+Step1:- Connect the oscilloscope device to the Pi GPIO with jumper cable.
+	VDD--->1
+	GND--->6
+	SDA--->3
+	SCL--->5
+Step2:- Enable Raspberry Pi I2C interface. In terminal, write-
+	sudo raspi-config
+Step3:- Update the Raspberry Pi. In terminal, write-
+	sudo apt-get update
+	sudo apt-get upgrade
+Step4:- Install the Adafruit ADS1115 library for ADC.
+	cd ~
+	git clone https://github.com/adafruit/Adafruit_Python_ADS1x15.git
+	sudo apt-get install build-essential python-dev python-smbus git
+	cd Adafruit_Python_ADS1x15
+	sudo python setup.py install
+	cd examples
+	python simpletest.py
+	sudo apt-get install python-matplotlib OR sudo apt-get install python3-matplotlib
+	sudo apt-get install python3-pip
+	sudo pip install drawnow
+	sudo nano scope.py
+Step5:- Now write the python code-
+Step6:- sudo python scope.py

@@ -1,0 +1,25 @@
+Procedure: 
+Step 1:- In thonny, write the following code:
+	import rpi.GPIO as GPIO
+	from time import sleep
+	relay_pin = 26
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setup(relay_pin, GPIO.OUT)
+	GPIO.output(relay_pin, 1)
+	try:
+		while True:
+			GPIO.output(relay_pin, 0)
+			sleep(5)
+			GPIO.ouput(relay_pin, 1)
+			sleep(5)
+	except KeyboardInterrupt:
+		pass
+		GPIO.cleanup()
+Step 2:- Now shutdown the Raspberry Pi and connect the jumper wires between relay and GPIO:
+	GND--->6
+	VCC--->2
+	IN1--->37
+Step 3:- Run the python code. 
+
+Output: 
+photo
